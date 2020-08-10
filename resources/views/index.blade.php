@@ -11,70 +11,15 @@
             
                 <!-- Fixture Table List -->
                 <div class="ritekhed-fixture-table-slider">
-                    
+                    @foreach($daysFixture as $pergame)
                     <div class="ritekhed-fixture-table-slider-layer">
                         <time class="ritekhed-bgcolor-two" datetime="2008-02-14 20:00">August 28, 2016</time>
                         <ul class="ritekhed-bgcolor">
-                            <li>CIT <span>03</span></li>
-                            <li class="ritekhed-fixture-addtext">FullBook</li>
-                        </ul>
-                    </div>
-                    <div class="ritekhed-fixture-table-slider-layer">
-                        <time class="ritekhed-bgcolor-two" datetime="2008-02-14 20:00">August 28, 2016</time>
-                        <ul class="ritekhed-bgcolor">
-                            <li class="ritekhed-fixture-vs"><small>CIT</small> Vs <span>03</span></li>
-                            <li>KIN <span>03</span></li>
-                        </ul>
-                    </div>
-                    <div class="ritekhed-fixture-table-slider-layer">
-                        <time class="ritekhed-bgcolor-two" datetime="2008-02-14 20:00">August 28, 2016</time>
-                        <ul class="ritekhed-bgcolor">
-                            <li>BRC <span>05</span></li>
-                            <li>RM <span>01</span></li>
-                        </ul>
-                    </div>
-                    <div class="ritekhed-fixture-table-slider-layer">
-                        <time class="ritekhed-bgcolor-two" datetime="2008-02-14 20:00">August 28, 2016</time>
-                        <ul class="ritekhed-bgcolor">
-                            <li class="ritekhed-fixture-vs"><small>CIT</small> Vs <span>03</span></li>
+                            <li class="ritekhed-fixture-vs"><p>CIT</p> Vs <p>03</p></li>
                             <li class="ritekhed-fixture-addtext"><a href="#">Book Now</a></li>
                         </ul>
                     </div>
-                    <div class="ritekhed-fixture-table-slider-layer">
-                        <time class="ritekhed-bgcolor-two" datetime="2008-02-14 20:00">August 28, 2016</time>
-                        <ul class="ritekhed-bgcolor">
-                            <li>CIT <span>03</span></li>
-                            <li class="ritekhed-fixture-addtext">FullBook</li>
-                        </ul>
-                    </div>
-                    <div class="ritekhed-fixture-table-slider-layer">
-                        <time class="ritekhed-bgcolor-two" datetime="2008-02-14 20:00">August 28, 2016</time>
-                        <ul class="ritekhed-bgcolor">
-                            <li class="ritekhed-fixture-vs"><small>CIT</small> Vs <span>03</span></li>
-                            <li>KIN <span>03</span></li>
-                        </ul>
-                    </div>
-                    <div class="ritekhed-fixture-table-slider-layer">
-                        <time class="ritekhed-bgcolor-two" datetime="2008-02-14 20:00">August 28, 2016</time>
-                        <ul class="ritekhed-bgcolor">
-                            <li>BRC <span>05</span></li>
-                            <li>RM <span>01</span></li>
-                        </ul>
-                    </div>
-                    <div class="ritekhed-fixture-table-slider-layer">
-                        <time class="ritekhed-bgcolor-two" datetime="2008-02-14 20:00">August 28, 2016</time>
-                        <ul class="ritekhed-bgcolor">
-                            <li class="ritekhed-fixture-vs"><small>CIT</small> Vs <span>03</span></li>
-                            <li class="ritekhed-fixture-addtext"><a href="#">Book Now</a></li>
-                        </ul>
-                    </div>
-                    <div class="ritekhed-fixture-table-slider-layer">
-                        <time class="ritekhed-bgcolor-two" datetime="2008-02-14 20:00">August 28, 2016</time>
-                        <ul class="ritekhed-bgcolor">
-                            <li class="ritekhed-fixture-vs"><small>CIT</small> Vs <span>03</span></li>
-                            <li class="ritekhed-fixture-addtext"><a href="#">Book Now</a></li>
-                        </ul>
-                    </div>
+                    @endforeach
 
                 </div>
                 <!-- Fixture Table List -->
