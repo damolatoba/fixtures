@@ -11,13 +11,15 @@ class ApiCalls
      * @return string|null
      */
 
-    public static function get(string $pagePath): ?string
+    public static function getFixtures()
     {
         $curl = curl_init();
+        // dd($pagePath2);
+        // $pagePath2 = json_decode($pagePath2);
 
         curl_setopt_array($curl, array(
-            // CURLOPT_URL => "https://api-football-beta.p.rapidapi.com",
-            CURLOPT_URL => config('app.base_url').'/'.$pagePath,
+            CURLOPT_URL => "https://api-football-beta.p.rapidapi.com/fixtures/?season=2019&league=39&date=2020-07-26",
+            // CURLOPT_URL => config('app.base_url').'/'.$pagePath2,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_ENCODING => "",

@@ -15,7 +15,7 @@
                     <div class="ritekhed-fixture-table-slider-layer">
                         <time class="ritekhed-bgcolor-two" datetime="2008-02-14 20:00">August 28, 2016</time>
                         <ul class="ritekhed-bgcolor">
-                            <li class="ritekhed-fixture-vs"><p>CIT</p> Vs <p>03</p></li>
+                            <li class="ritekhed-fixture-vs"><p>{{ $pergame->teams->home->name }}</p> Vs <p>{{ $pergame->teams->away->name }}</p></li>
                             <li class="ritekhed-fixture-addtext"><a href="#">Book Now</a></li>
                         </ul>
                     </div>

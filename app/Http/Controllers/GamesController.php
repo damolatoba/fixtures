@@ -43,19 +43,12 @@ class GamesController extends Controller
             }
         }
 
-        // dd($finalLeague);
 
-        $daysFixture = [];
-        foreach($finalLeague as $eachgame){
-            $theParams = ['date'=>date("Y-m-d"), 'league'=>$eachgame, 'season'=>'2019'];
-            $query = http_build_query($theParams);
-            $pagePath = '/fixtures';
-            $pagePath .= '/?'.$query;
-            $response = $this->apiCalls->get($pagePath);
-            array_push($daysFixture, $response);
-        }
+        $daysFixture = $this->apiCalls->getFixtures();
+        $daysFixture =  (array) json_decode($daysFixture);
 
-        dd($daysFixture);
+        $daysFixture = $daysFixture['response'];
+        // dd($daysFixture);
         
         return view('index', compact('daysFixture'));
         
