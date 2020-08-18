@@ -378,6 +378,15 @@ class GamesController extends Controller
 
         //odds array search doc
         //https://www.geeksforgeeks.org/how-to-search-by-keyvalue-in-a-multidimensional-array-in-php/?ref=rp
+
+        // fixture id = response->fixture->id
+
+        // odds fixture = response->fixture->id
+
+        // odds = response->bookmakers->bets->values
+
+
+
         $urlQueryParams = ['date'=>$currentDate, 'bookmaker'=>6, 'bet'=>1];
         $allodds = json_decode($this->apiCalls->rapidGet('odds', $urlQueryParams));
 
