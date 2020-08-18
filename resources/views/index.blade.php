@@ -25,7 +25,7 @@
                                     <th colspan="4" style="width:100%;"><b>{{ $country }} {{ $fixture['fullname'] }}</b></th>
                                 </tr>
                                 @foreach($fixture['fixtures'] as $game)
-                                @if($game->fixture->date > $currentDate)
+                                <!-- @if($game->fixture->date > $currentDate) -->
                                     <tr>
                                         <td>
                                             <figure><img src="{{ $game->teams->home->logo }}" alt=""></figure>
@@ -44,7 +44,7 @@
                                         </td>
                                         <td>December 09, 2017</td>
                                     </tr>
-                                @endif
+                                <!-- @endif -->
                                 @endforeach
                                 @endif
                             @endforeach
