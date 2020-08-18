@@ -31,29 +31,25 @@ class GamesController extends Controller
                     'id'=>2, 
                     'fullname'=> 'Uefa Champions League',
                     'shortname'=> 'UCL',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>3, 
                     'fullname'=> 'Uefa Europa League', 
                     'shortname'=> 'Europa',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>531, 
                     'fullname'=> 'Uefa Super Cup', 
                     'shortname'=> 'Super Cup',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>14, 
                     'fullname'=> 'UEFA Youth League', 
                     'shortname'=> 'UEFA Youth League',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ]
             ],
             'England' => [
@@ -61,22 +57,19 @@ class GamesController extends Controller
                     'id'=>39, 
                     'fullname'=> 'English Premier League',
                     'shortname'=> 'EPL',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>45, 
                     'fullname'=> 'FA Cup', 
                     'shortname'=> 'FA Cup',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>528, 
                     'fullname'=> 'Community Shield', 
                     'shortname'=> 'Community Shield',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ]
             ],
             'Spain' => [
@@ -84,15 +77,13 @@ class GamesController extends Controller
                     'id'=>140, 
                     'fullname'=> 'Primera Division (La LIga)',
                     'shortname'=> 'La Liga',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>556, 
                     'fullname'=> 'Super Cup', 
                     'shortname'=> 'Super Cup',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ]
             ],
             'Germany' => [
@@ -100,22 +91,19 @@ class GamesController extends Controller
                     'id'=>78, 
                     'fullname'=> 'Bundesliga 1',
                     'shortname'=> 'Bundesliga',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>529, 
                     'fullname'=> 'Super Cup', 
                     'shortname'=> 'Super Cup',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>81, 
                     'fullname'=> 'DFB Pokal', 
                     'shortname'=> 'DFB',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'France' => [
@@ -123,22 +111,19 @@ class GamesController extends Controller
                     'id'=>61, 
                     'fullname'=> 'Ligue 1',
                     'shortname'=> 'Ligue 1',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>526, 
                     'fullname'=> 'Trophee de Champions', 
                     'shortname'=> 'Trophee de Champions',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>65, 
                     'fullname'=> 'Coipe de la Ligue', 
                     'shortname'=> 'Coipe de la Ligue',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'Italy' => [
@@ -146,29 +131,25 @@ class GamesController extends Controller
                     'id'=>135, 
                     'fullname'=> 'Seria A',
                     'shortname'=> 'Seria A',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>137, 
                     'fullname'=> 'Copa Italia', 
                     'shortname'=> 'Copa Italia',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>547, 
                     'fullname'=> 'Super Cup', 
                     'shortname'=> 'Super Cup',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>136, 
                     'fullname'=> 'Seria B', 
                     'shortname'=> 'Seria B',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'Argentina' => [
@@ -183,8 +164,7 @@ class GamesController extends Controller
                     'id'=>130, 
                     'fullname'=> 'Copa Argentina', 
                     'shortname'=> 'Copa Argentina',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'Portugal' => [
@@ -192,22 +172,19 @@ class GamesController extends Controller
                     'id'=>96, 
                     'fullname'=> 'Taca de Portugal',
                     'shortname'=> 'Taca de Portugal',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>457, 
                     'fullname'=> 'Campeonato de Portugal Prio - Group A', 
                     'shortname'=> 'Campeonato de Portugal Prio - Group A',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>550, 
                     'fullname'=> 'Super Cup', 
                     'shortname'=> 'Super Cup',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'Netherlands' => [
@@ -215,29 +192,25 @@ class GamesController extends Controller
                     'id'=>88, 
                     'fullname'=> 'Eredivisie',
                     'shortname'=> 'Eredivisie ',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>90, 
                     'fullname'=> 'KNVB Beker', 
                     'shortname'=> 'KNVB',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>543, 
                     'fullname'=> 'Super Cup', 
                     'shortname'=> 'Super Cup',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>88, 
                     'fullname'=> 'Eredivisie', 
                     'shortname'=> 'Eredivisie',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'Belgium' => [
@@ -245,29 +218,25 @@ class GamesController extends Controller
                     'id'=>144, 
                     'fullname'=> 'Jupiler Pro League',
                     'shortname'=> 'Jupiler Pro League ',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>90, 
                     'fullname'=> 'KNVB Beker', 
                     'shortname'=> 'KNVB',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>543, 
                     'fullname'=> 'Super Cup', 
                     'shortname'=> 'Super Cup',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>88, 
                     'fullname'=> 'Eredivisie', 
                     'shortname'=> 'Eredivisie',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'Scotland' => [
@@ -275,8 +244,7 @@ class GamesController extends Controller
                     'id'=>179, 
                     'fullname'=> 'Premiership',
                     'shortname'=> 'Jupiler Pro League Premiership',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'Norway' => [
@@ -284,8 +252,7 @@ class GamesController extends Controller
                     'id'=>103, 
                     'fullname'=> 'Eliteserien',
                     'shortname'=> 'Eliteserien',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'Sweden' => [
@@ -293,15 +260,13 @@ class GamesController extends Controller
                     'id'=>144, 
                     'fullname'=> 'Superettan',
                     'shortname'=> 'Superettan',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>113, 
                     'fullname'=> 'Allsvenskan',
                     'shortname'=> 'Allsvenskan',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'Brazil' => [
@@ -309,15 +274,13 @@ class GamesController extends Controller
                     'id'=>71, 
                     'fullname'=> 'Serie A',
                     'shortname'=> 'Serie A',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>72, 
                     'fullname'=> 'Serie B',
                     'shortname'=> 'Serie B',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'Usa' => [
@@ -325,8 +288,7 @@ class GamesController extends Controller
                     'id'=>253, 
                     'fullname'=> 'Major League Soccer',
                     'shortname'=> 'Major League Soccer',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'China' => [
@@ -334,8 +296,7 @@ class GamesController extends Controller
                     'id'=>169, 
                     'fullname'=> 'Super League',
                     'shortname'=> 'Super League',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'Iran' => [
@@ -343,8 +304,7 @@ class GamesController extends Controller
                     'id'=>291, 
                     'fullname'=> 'Azadegan League',
                     'shortname'=> 'Azadegan League',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
             'South-Africa' => [
@@ -352,15 +312,13 @@ class GamesController extends Controller
                     'id'=>288, 
                     'fullname'=> 'Premier Soccer League',
                     'shortname'=> 'Premier Soccer League',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
                 [
                     'id'=>289, 
                     'fullname'=> '1st Division',
                     'shortname'=> '1st Division',
-                    'fixtures'=> [],
-                    'odds'=> []
+                    'fixtures'=> []
                 ],
             ],
         ];
@@ -370,34 +328,40 @@ class GamesController extends Controller
         $uri = "fixtures";
         $currentSeason = 2019;
         $currentDate = date('Y-m-d');
+        //set query params to make api request for fixtures
         $urlQueryParams = ['season'=>$currentSeason, 'date'=>$currentDate];
-        // dd($urlQueryParams);
 
+        //make call to get fixtures of the day
         $allfixtures = json_decode($this->apiCalls->rapidGet($uri, $urlQueryParams));
-        // dd($allfixtures);
 
-        //odds array search doc
-        //https://www.geeksforgeeks.org/how-to-search-by-keyvalue-in-a-multidimensional-array-in-php/?ref=rp
-
-        // fixture id = response->fixture->id
-
-        // odds fixture = response->fixture->id
-
-        // odds = response->bookmakers->bets->values
-
-
-
+        //reset query params to make api request for odds
         $urlQueryParams = ['date'=>$currentDate, 'bookmaker'=>6, 'bet'=>1];
-        $allodds = json_decode($this->apiCalls->rapidGet('odds', $urlQueryParams));
+        //make call to get all odds of the day
+        $getodds = json_decode($this->apiCalls->rapidGet('odds', $urlQueryParams));
 
-        dd($allodds->response);
+        $getodds = $getodds['response'];
 
-        $allfixtures = $allfixtures->response;
-        if(count($allfixtures)>0){
+        $allodds = [];
+        if($getodds != null){
+            //logic to loop through odds array, take streamline odds data
+            foreach($getodds as $go){
+                $pgo = ['id'=> $go->fixture->id, 'game-odds'=> $go->bookmakers];
+                array_push($allodds, $pgo);
+            }
+        }
+        // dd($allodds);
+
+        // $allfixtures = $allfixtures->response;
+
+        if($allfixtures != null){
+            //loop through fixtures array from api and update $allleagues array with fixtures and odds data
             foreach($allfixtures as $fixture){
                 if(in_array($fixture->league->country, $countries)){
                     $key = array_search($fixture->league->id, array_column($allleagues[$fixture->league->country], "id"));
-                        array_push($allleagues[$fixture->league->country][$key]['fixtures'], $fixture);
+                    
+                    $oddskey = array_search($fixture->fixture->id, array_column($allodds, "id"));
+                    $fixturewithodds = array_merge(array($fixture), $allodds[$oddskey]);
+                        array_push($allleagues[$fixture->league->country][$key]['fixtures'], $fixturewithodds);
                 }
             }
         }

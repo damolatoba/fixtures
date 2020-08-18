@@ -24,13 +24,13 @@
                                 <tr style="max-height:5px;">
                                     <th colspan="4" style="width:100%;"><b>{{ $country }} {{ $fixture['fullname'] }}</b></th>
                                 </tr>
-                                @foreach($fixture['fixtures'] as $game)
+                                @foreach($fixture->fixtures as $game)
                                 <!-- @if($game->fixture->date > $currentDate) -->
                                     <tr>
                                         <td>
                                             <figure><img src="{{ $game->teams->home->logo }}" alt=""></figure>
                                             <div class="player-stats-text">
-                                                <h6>{{ $game->teams->home->name }}</h6>
+                                                <h6>{{ $game[0]->teams->home->name }}</h6>
                                                 <!-- <span>St. Patrick’s Institute</span> -->
                                             </div>
                                         </td>
@@ -38,7 +38,7 @@
                                         <td>
                                             <figure><img src="{{ $game->teams->away->logo }}" alt=""></figure>
                                             <div class="player-stats-text">
-                                                <h6>{{ $game->teams->away->name }}</h6>
+                                                <h6>{{ $game[0]->teams->away->name }}</h6>
                                                 <!-- <span>Marine College</span> -->
                                             </div>
                                         </td>
