@@ -4,29 +4,7 @@
 <!-- Content -->
 <div class="ritekhed-main-content">
 
-<!-- Main Section -->
-<div class="ritekhed-main-section ritekhed-fixture-table-slider-full">
-    <div class="container-fluid">
-        <div class="row">
-            
-                <!-- Fixture Table List -->
-                <div class="ritekhed-fixture-table-slider">
-                    @foreach($daysFixture as $pergame)
-                    <div class="ritekhed-fixture-table-slider-layer">
-                        <time class="ritekhed-bgcolor-two" datetime="2008-02-14 20:00">August 28, 2016</time>
-                        <ul class="ritekhed-bgcolor">
-                            <li class="ritekhed-fixture-vs"><p>{{ $pergame->teams->home->name }}</p> Vs <p>{{ $pergame->teams->away->name }}</p></li>
-                            <li class="ritekhed-fixture-addtext"><a href="#">Book Now</a></li>
-                        </ul>
-                    </div>
-                    @endforeach
 
-                </div>
-                <!-- Fixture Table List -->
-        </div>
-    </div>
-</div>
-<!-- Main Section -->
 
 <!-- Main Section -->
 <div class="ritekhed-main-section">
@@ -36,101 +14,42 @@
             <!-- Match Fixtures -->
             <div class="col-md-6">
                 <div class="ritekhed-match-fixture">
-                    <div class="ritekhed-classic-heading">
-                        <h2>Match Fixtures</h2>
+                    <div class="">
+                        <h2>Fixtures</h2>
                     </div>
                     <table class="ritekhed-client-detail">
-                        <tr>
-                            <td>
-                                <figure><img src="extra-images/player-stats-img1.jpg" alt=""></figure>
-                                <div class="player-stats-text">
-                                    <h6>Ocean Kings</h6>
-                                    <span>St. Patrick’s Institute</span>
-                                </div>
-                            </td>
-                            <td><span>VS</span></td>
-                            <td>
-                                <figure><img src="extra-images/player-stats-img2.jpg" alt=""></figure>
-                                <div class="player-stats-text">
-                                    <h6>Bloody Wave</h6>
-                                    <span>Marine College</span>
-                                </div>
-                            </td>
-                            <td>December 09, 2017</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <figure><img src="extra-images/player-stats-img3.jpg" alt=""></figure>
-                                <div class="player-stats-text">
-                                    <h6>L.A Pirates</h6>
-                                    <span>Bebop Institute</span>
-                                </div>
-                            </td>
-                            <td><span>VS</span></td>
-                            <td>
-                                <figure><img src="extra-images/player-stats-img4.jpg" alt=""></figure>
-                                <div class="player-stats-text">
-                                    <h6>Ocean Kings</h6>
-                                    <span>Icarus College</span>
-                                </div>
-                            </td>
-                            <td>December 11, 2017</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <figure><img src="extra-images/player-stats-img5.jpg" alt=""></figure>
-                                <div class="player-stats-text">
-                                    <h6>Red Wings</h6>
-                                    <span>Marine College</span>
-                                </div>
-                            </td>
-                            <td><span>VS</span></td>
-                            <td>
-                                <figure><img src="extra-images/player-stats-img6.jpg" alt=""></figure>
-                                <div class="player-stats-text">
-                                    <h6>Lucky Clovers</h6>
-                                    <span>Elric Bros School</span>
-                                </div>
-                            </td>
-                            <td>December 12, 2017</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <figure><img src="extra-images/player-stats-img6.jpg" alt=""></figure>
-                                <div class="player-stats-text">
-                                    <h6>Draconians</h6>
-                                    <span>Atlantic School</span>
-                                </div>
-                            </td>
-                            <td><span>VS</span></td>
-                            <td>
-                                <figure><img src="extra-images/player-stats-img1.jpg" alt=""></figure>
-                                <div class="player-stats-text">
-                                    <h6>Ocean Kings</h6>
-                                    <span>St. Patrick’s Institute</span>
-                                </div>
-                            </td>
-                            <td>December 15, 2017</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <figure><img src="extra-images/player-stats-img2.jpg" alt=""></figure>
-                                <div class="player-stats-text">
-                                    <h6>Bloody Wave</h6>
-                                    <span>Marine College</span>
-                                </div>
-                            </td>
-                            <td><span>VS</span></td>
-                            <td>
-                                <figure><img src="extra-images/player-stats-img3.jpg" alt=""></figure>
-                                <div class="player-stats-text">
-                                    <h6>L.A Pirates</h6>
-                                    <span>Bebop Institute</span>
-                                </div>
-                            </td>
-                            <td>December 17, 2017</td>
-                        </tr>
-                    </table>
+                    @foreach($countries as $country)
+                        @foreach($allleagues[$country] as $fixture)
+                            @if(count($fixture['fixtures']) != 0)
+                                <tr style="max-height:5px;">
+                                    <th colspan="4" style="width:100%;"><b>{{ $country }} {{ $fixture['fullname'] }}</b></th>
+                                </tr>
+                                @foreach($fixture['fixtures'] as $game)
+                                @if($game->fixture->date > $currentDate)
+                                    <tr>
+                                        <td>
+                                            <figure><img src="{{ $game->teams->home->logo }}" alt=""></figure>
+                                            <div class="player-stats-text">
+                                                <h6>{{ $game->teams->home->name }}</h6>
+                                                <!-- <span>St. Patrick’s Institute</span> -->
+                                            </div>
+                                        </td>
+                                        <td><span>VS</span></td>
+                                        <td>
+                                            <figure><img src="{{ $game->teams->away->logo }}" alt=""></figure>
+                                            <div class="player-stats-text">
+                                                <h6>{{ $game->teams->away->name }}</h6>
+                                                <!-- <span>Marine College</span> -->
+                                            </div>
+                                        </td>
+                                        <td>December 09, 2017</td>
+                                    </tr>
+                                @endif
+                                @endforeach
+                                @endif
+                            @endforeach
+                        @endforeach                                   
+                    </table>    
                 </div>
             </div>
             <!-- Match Fixtures -->

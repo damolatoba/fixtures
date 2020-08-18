@@ -11,15 +11,13 @@ class ApiCalls
      * @return string|null
      */
 
-    public static function getFixtures()
+    public static function rapidGet(string $uri, array $urlQueryParams): string
     {
         $curl = curl_init();
-        // dd($pagePath2);
-        // $pagePath2 = json_decode($pagePath2);
+        $urlQueryParams = http_build_query($urlQueryParams);
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api-football-beta.p.rapidapi.com/fixtures/?season=2019&league=39&date=2020-07-26",
-            // CURLOPT_URL => config('app.base_url').'/'.$pagePath2,
+            CURLOPT_URL => config('app.base_url').'/'.$uri.'/?'.$urlQueryParams,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_ENCODING => "",
