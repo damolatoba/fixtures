@@ -206,12 +206,6 @@ class GamesController extends Controller
                     'shortname'=> 'Super Cup',
                     'fixtures'=> []
                 ],
-                [
-                    'id'=>88, 
-                    'fullname'=> 'Eredivisie', 
-                    'shortname'=> 'Eredivisie',
-                    'fixtures'=> []
-                ],
             ],
             'Belgium' => [
                 [
@@ -327,9 +321,11 @@ class GamesController extends Controller
 
         $uri = "fixtures";
         $currentSeason = 2019;
-        $currentDate = date('Y-m-d');
+        // $currentDate = date('Y-m-d');
+        $currentDate = "2020-08-19";
         //set query params to make api request for fixtures
         $urlQueryParams = ['season'=>$currentSeason, 'date'=>$currentDate];
+        // dd($urlQueryParams);
 
         //make call to get fixtures of the day
         $allfixtures = json_decode($this->apiCalls->rapidGet($uri, $urlQueryParams));
@@ -338,30 +334,34 @@ class GamesController extends Controller
         $urlQueryParams = ['date'=>$currentDate, 'bookmaker'=>6, 'bet'=>1];
         //make call to get all odds of the day
         $getodds = json_decode($this->apiCalls->rapidGet('odds', $urlQueryParams));
-
-        $getodds = $getodds['response'];
+        $getodds = $getodds->response;
+        // dd($getodds);
+        
 
         $allodds = [];
         if($getodds != null){
             //logic to loop through odds array, take streamline odds data
             foreach($getodds as $go){
-                $pgo = ['id'=> $go->fixture->id, 'game-odds'=> $go->bookmakers];
+                $pgo = [$go->fixture->id => $go->bookmakers[0]->bets[0]->values];
                 array_push($allodds, $pgo);
             }
         }
-        // dd($allodds);
+        dd($allodds);
 
-        // $allfixtures = $allfixtures->response;
+        $allfixtures = $allfixtures->response;
 
-        if($allfixtures != null){
+        if($allfixtures != null && $getodds != null){
             //loop through fixtures array from api and update $allleagues array with fixtures and odds data
             foreach($allfixtures as $fixture){
+                $currentcountry = $fixture->league->country;
                 if(in_array($fixture->league->country, $countries)){
                     $key = array_search($fixture->league->id, array_column($allleagues[$fixture->league->country], "id"));
+                    if(array_key_exists($fixture->fixture->id, $allodds)){
+                        array_push($allleagues[$currentcountry][$key]['fixtures'], $fixture, $allodds[$fixture->fixture->id]);
+                    }else{
+                        array_push($allleagues[$currentcountry][$key]['fixtures'], $fixture);
+                    }
                     
-                    $oddskey = array_search($fixture->fixture->id, array_column($allodds, "id"));
-                    $fixturewithodds = array_merge(array($fixture), $allodds[$oddskey]);
-                        array_push($allleagues[$fixture->league->country][$key]['fixtures'], $fixturewithodds);
                 }
             }
         }

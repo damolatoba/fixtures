@@ -39,8 +39,10 @@ class ApiCalls
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
-            // return $response;
-            return response()->noContent();
+            if($response == null){
+                return response()->noContent();
+            }
+            return $response;
         }
     }
         
