@@ -16,3 +16,4 @@
 // });
 
 Route::get('/', 'GamesController@index');
+Route::get('/updatejason', 'GamesController@updatejason');

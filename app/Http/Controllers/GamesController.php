@@ -20,356 +20,18 @@ class GamesController extends Controller
 
     public function __construct(ApiCalls $apiCalls) {
         $this->apiCalls = $apiCalls;
+        // load file
+        $this->data = file_get_contents('fixtures.json');
+        // decode json to associative array
+        $this->fixtures = json_decode($this->data, true);
     }
 
     
     public function index()
     {
-        $allleagues = [
-            'World' => [
-                [
-                    'id'=>2, 
-                    'fullname'=> 'Uefa Champions League',
-                    'shortname'=> 'UCL',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>3, 
-                    'fullname'=> 'Uefa Europa League', 
-                    'shortname'=> 'Europa',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>531, 
-                    'fullname'=> 'Uefa Super Cup', 
-                    'shortname'=> 'Super Cup',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>14, 
-                    'fullname'=> 'UEFA Youth League', 
-                    'shortname'=> 'UEFA Youth League',
-                    'fixtures'=> []
-                ]
-            ],
-            'England' => [
-                [
-                    'id'=>39, 
-                    'fullname'=> 'English Premier League',
-                    'shortname'=> 'EPL',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>45, 
-                    'fullname'=> 'FA Cup', 
-                    'shortname'=> 'FA Cup',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>528, 
-                    'fullname'=> 'Community Shield', 
-                    'shortname'=> 'Community Shield',
-                    'fixtures'=> []
-                ]
-            ],
-            'Spain' => [
-                [
-                    'id'=>140, 
-                    'fullname'=> 'Primera Division (La LIga)',
-                    'shortname'=> 'La Liga',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>556, 
-                    'fullname'=> 'Super Cup', 
-                    'shortname'=> 'Super Cup',
-                    'fixtures'=> []
-                ]
-            ],
-            'Germany' => [
-                [
-                    'id'=>78, 
-                    'fullname'=> 'Bundesliga 1',
-                    'shortname'=> 'Bundesliga',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>529, 
-                    'fullname'=> 'Super Cup', 
-                    'shortname'=> 'Super Cup',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>81, 
-                    'fullname'=> 'DFB Pokal', 
-                    'shortname'=> 'DFB',
-                    'fixtures'=> []
-                ],
-            ],
-            'France' => [
-                [
-                    'id'=>61, 
-                    'fullname'=> 'Ligue 1',
-                    'shortname'=> 'Ligue 1',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>526, 
-                    'fullname'=> 'Trophee de Champions', 
-                    'shortname'=> 'Trophee de Champions',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>65, 
-                    'fullname'=> 'Coipe de la Ligue', 
-                    'shortname'=> 'Coipe de la Ligue',
-                    'fixtures'=> []
-                ],
-            ],
-            'Italy' => [
-                [
-                    'id'=>135, 
-                    'fullname'=> 'Seria A',
-                    'shortname'=> 'Seria A',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>137, 
-                    'fullname'=> 'Copa Italia', 
-                    'shortname'=> 'Copa Italia',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>547, 
-                    'fullname'=> 'Super Cup', 
-                    'shortname'=> 'Super Cup',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>136, 
-                    'fullname'=> 'Seria B', 
-                    'shortname'=> 'Seria B',
-                    'fixtures'=> []
-                ],
-            ],
-            'Argentina' => [
-                [
-                    'id'=>128, 
-                    'fullname'=> 'Primera Division',
-                    'shortname'=> 'Primera Division',
-                    'fixtures'=> [],
-            'odds'=> []
-                ],
-                [
-                    'id'=>130, 
-                    'fullname'=> 'Copa Argentina', 
-                    'shortname'=> 'Copa Argentina',
-                    'fixtures'=> []
-                ],
-            ],
-            'Portugal' => [
-                [
-                    'id'=>96, 
-                    'fullname'=> 'Taca de Portugal',
-                    'shortname'=> 'Taca de Portugal',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>457, 
-                    'fullname'=> 'Campeonato de Portugal Prio - Group A', 
-                    'shortname'=> 'Campeonato de Portugal Prio - Group A',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>550, 
-                    'fullname'=> 'Super Cup', 
-                    'shortname'=> 'Super Cup',
-                    'fixtures'=> []
-                ],
-            ],
-            'Netherlands' => [
-                [
-                    'id'=>88, 
-                    'fullname'=> 'Eredivisie',
-                    'shortname'=> 'Eredivisie ',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>90, 
-                    'fullname'=> 'KNVB Beker', 
-                    'shortname'=> 'KNVB',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>543, 
-                    'fullname'=> 'Super Cup', 
-                    'shortname'=> 'Super Cup',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>88, 
-                    'fullname'=> 'Eredivisie', 
-                    'shortname'=> 'Eredivisie',
-                    'fixtures'=> []
-                ],
-            ],
-            'Belgium' => [
-                [
-                    'id'=>144, 
-                    'fullname'=> 'Jupiler Pro League',
-                    'shortname'=> 'Jupiler Pro League ',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>90, 
-                    'fullname'=> 'KNVB Beker', 
-                    'shortname'=> 'KNVB',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>543, 
-                    'fullname'=> 'Super Cup', 
-                    'shortname'=> 'Super Cup',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>88, 
-                    'fullname'=> 'Eredivisie', 
-                    'shortname'=> 'Eredivisie',
-                    'fixtures'=> []
-                ],
-            ],
-            'Scotland' => [
-                [
-                    'id'=>179, 
-                    'fullname'=> 'Premiership',
-                    'shortname'=> 'Jupiler Pro League Premiership',
-                    'fixtures'=> []
-                ],
-            ],
-            'Norway' => [
-                [
-                    'id'=>103, 
-                    'fullname'=> 'Eliteserien',
-                    'shortname'=> 'Eliteserien',
-                    'fixtures'=> []
-                ],
-            ],
-            'Sweden' => [
-                [
-                    'id'=>144, 
-                    'fullname'=> 'Superettan',
-                    'shortname'=> 'Superettan',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>113, 
-                    'fullname'=> 'Allsvenskan',
-                    'shortname'=> 'Allsvenskan',
-                    'fixtures'=> []
-                ],
-            ],
-            'Brazil' => [
-                [
-                    'id'=>71, 
-                    'fullname'=> 'Serie A',
-                    'shortname'=> 'Serie A',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>72, 
-                    'fullname'=> 'Serie B',
-                    'shortname'=> 'Serie B',
-                    'fixtures'=> []
-                ],
-            ],
-            'Usa' => [
-                [
-                    'id'=>253, 
-                    'fullname'=> 'Major League Soccer',
-                    'shortname'=> 'Major League Soccer',
-                    'fixtures'=> []
-                ],
-            ],
-            'China' => [
-                [
-                    'id'=>169, 
-                    'fullname'=> 'Super League',
-                    'shortname'=> 'Super League',
-                    'fixtures'=> []
-                ],
-            ],
-            'Iran' => [
-                [
-                    'id'=>291, 
-                    'fullname'=> 'Azadegan League',
-                    'shortname'=> 'Azadegan League',
-                    'fixtures'=> []
-                ],
-            ],
-            'South-Africa' => [
-                [
-                    'id'=>288, 
-                    'fullname'=> 'Premier Soccer League',
-                    'shortname'=> 'Premier Soccer League',
-                    'fixtures'=> []
-                ],
-                [
-                    'id'=>289, 
-                    'fullname'=> '1st Division',
-                    'shortname'=> '1st Division',
-                    'fixtures'=> []
-                ],
-            ],
-        ];
+         dd($this->fixtures);
 
-        $countries = array_keys($allleagues);
-
-        $uri = "fixtures";
-        $currentSeason = 2019;
-        $currentDate = date('Y-m-d');
-        //set query params to make api request for fixtures
-        $urlQueryParams = ['season'=>$currentSeason, 'date'=>$currentDate];
-
-        //make call to get fixtures of the day
-        $allfixtures = json_decode($this->apiCalls->rapidGet($uri, $urlQueryParams));
-
-        //reset query params to make api request for odds
-        $urlQueryParams = ['date'=>$currentDate, 'bookmaker'=>6, 'bet'=>1];
-        //make call to get all odds of the day
-        $getodds = json_decode($this->apiCalls->rapidGet('odds', $urlQueryParams));
-
-        $getodds = $getodds['response'];
-
-        $allodds = [];
-        if($getodds != null){
-            //logic to loop through odds array, take streamline odds data
-            foreach($getodds as $go){
-                $pgo = ['id'=> $go->fixture->id, 'game-odds'=> $go->bookmakers];
-                array_push($allodds, $pgo);
-            }
-        }
-        // dd($allodds);
-
-        // $allfixtures = $allfixtures->response;
-
-        if($allfixtures != null){
-            //loop through fixtures array from api and update $allleagues array with fixtures and odds data
-            foreach($allfixtures as $fixture){
-                if(in_array($fixture->league->country, $countries)){
-                    $key = array_search($fixture->league->id, array_column($allleagues[$fixture->league->country], "id"));
-                    
-                    $oddskey = array_search($fixture->fixture->id, array_column($allodds, "id"));
-                    $fixturewithodds = array_merge(array($fixture), $allodds[$oddskey]);
-                        array_push($allleagues[$fixture->league->country][$key]['fixtures'], $fixturewithodds);
-                }
-            }
-        }
-        
-
-        dd($allleagues);
-
-        return view('index', compact('allleagues', 'countries', 'currentDate'));
+        return view('index', compact('fixtures'));  
         
     }
 
@@ -378,6 +40,116 @@ class GamesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function updatejason()
+    {
+        //
+        $uri = "fixtures";
+        $currentSeason = 2020;
+        $currentDate = date('Y-m-d');
+        $league = 39;
+        $fixtures = $this->fixtures;
+
+        //set query params to make api request for fixtures
+        $urlQueryParams = ['season'=>$currentSeason, 'date'=>$currentDate, 'league'=>$league];
+
+        //make call to get fixtures of the day
+        $apifixtures = json_decode($this->apiCalls->rapidGet($uri, $urlQueryParams));
+
+        $apifixtures = $apifixtures->response;
+
+        $uri = "odds";
+        //set query params to make api request for fixtures
+        $urlQueryParams = ['bookmaker'=>24, 'bet'=>1, 'league'=>$league, 'season'=>$currentSeason];
+
+        //make call to get fixtures of the day
+        $apiodds = json_decode($this->apiCalls->rapidGet($uri, $urlQueryParams));
+
+        $apiodds = $apiodds->response;
+
+        // dd($apiodds);
+
+        foreach($apifixtures as $apifix)
+        {
+            $key = array_search($apifix->fixture->id, array_column(array_column($apiodds, 'fixture'), 'id'));
+            $checker = 0;
+            foreach ($fixtures as $key => $value) 
+            {
+                if ($apifix->fixture->id == $value['id']) 
+                {
+                    $fixtures[$key]['status'] = $apifix->fixture->status->short;
+                    $fixtures[$key]['elapsed'] = $apifix->fixture->status->elapsed;
+
+                    $fixtures[$key]['home-winner'] = $apifix->teams->home->winner;
+                    $fixtures[$key]["home-goals"] = $apifix->goals->home;
+                    $fixtures[$key]["home-ht-goals"]= $apifix->score->halftime->home;
+                    $fixtures[$key]["home-ft-goals"]= $apifix->score->fulltime->home;
+                    $fixtures[$key]["home-et-goals"]= $apifix->score->extratime->home;
+                    $fixtures[$key]["home-penalty-goals"]= $apifix->score->penalty->home;
+
+                    $fixtures[$key]['away-winner'] = $apifix->teams->away->winner;
+                    $fixtures[$key]["away-goals"] = $apifix->goals->away;
+                    $fixtures[$key]["away-ht-goals"]= $apifix->score->halftime->away;
+                    $fixtures[$key]["away-ft-goals"]= $apifix->score->fulltime->away;
+                    $fixtures[$key]["away-et-goals"]= $apifix->score->extratime->away;
+                    $fixtures[$key]["away-penalty-goals"]= $apifix->score->penalty->away;
+
+                    $fixtures[$key]["home-win"]= $apiodds[$key]->bookmakers[0]->bets[0]->values[0]->odd;
+                    $fixtures[$key]["draw"]= $apiodds[$key]->bookmakers[0]->bets[0]->values[1]->odd;
+                    $fixtures[$key]["away-win"]= $apiodds[$key]->bookmakers[0]->bets[0]->values[2]->odd;
+                    $checker = 1;
+                }
+                
+            }
+
+            if($checker == 0)
+            {
+                $fixtures[] = array(
+                    "league-id" => $apifix->league->id,
+                    "id"=> $apifix->fixture->id,
+                    "date"=> $apifix->fixture->date,
+                    "time"=> $apifix->fixture->timestamp,
+                    "status"=> $apifix->fixture->status->short,
+                    "elapsed"=> $apifix->fixture->status->elapsed,
+
+                    "home-id"=> $apifix->teams->home->id,
+                    "home-name"=> $apifix->teams->home->name,
+                    "home-logo"=> $apifix->teams->home->logo,
+                    "home-winner"=> $apifix->teams->home->winner,
+                    "home-goals"=> $apifix->goals->home,
+                    "home-ht-goals"=> $apifix->score->halftime->home,
+                    "home-ft-goals"=> $apifix->score->fulltime->home,
+                    "home-et-goals"=> $apifix->score->extratime->home,
+                    "home-penalty-goals"=> $apifix->score->penalty->home,
+
+                    "away-id"=> $apifix->teams->away->id,
+                    "away-name"=> $apifix->teams->away->name,
+                    "away-logo"=> $apifix->teams->away->logo,
+                    "away-winner"=> $apifix->teams->away->winner,
+                    "away-goals"=> $apifix->goals->away,
+                    "away-ht-goals"=> $apifix->score->halftime->away,
+                    "away-ft-goals"=> $apifix->score->fulltime->away,
+                    "away-et-goals"=> $apifix->score->extratime->away,
+                    "away-penalty-goals"=> $apifix->score->penalty->away,
+
+
+                    "home-win"=> $apiodds[$key]->bookmakers[0]->bets[0]->values[0]->odd,
+                    "draw"=> $apiodds[$key]->bookmakers[0]->bets[0]->values[1]->odd,
+                    "away-win"=> $apiodds[$key]->bookmakers[0]->bets[0]->values[2]->odd,
+                );
+            }
+        }
+
+        // encode json and save to file
+        file_put_contents('fixtures.json', json_encode($fixtures));
+
+        dd($fixtures);
+        
+    }
+
+    
+
+
     public function create()
     {
         //
